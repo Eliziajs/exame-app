@@ -10,5 +10,4 @@ public class ExameAppApplication {
 		SpringApplication.run(ExameAppApplication.class, args);
 		System.out.println("amém");
 	}
-
 }
