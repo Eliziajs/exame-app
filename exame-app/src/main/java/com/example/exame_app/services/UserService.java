@@ -1,7 +1,8 @@
 package com.example.exame_app.services;
 
-import eco.com.exame.domain.User;
-import eco.com.exame.repository.UserRepository;
+
+import com.example.exame_app.domain.User;
+import com.example.exame_app.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -2,13 +2,16 @@ package com.example.exame_app.controllers;
 
 
 import com.example.exame_app.domain.User;
+import com.example.exame_app.dto.LoginRequestDTO;
 import com.example.exame_app.dto.RegisterRequestDTO;
 import com.example.exame_app.dto.ResponseDTO;
+import com.example.exame_app.infra.security.TokenService;
 import com.example.exame_app.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,8 +24,10 @@ import java.util.Optional;
 public class AuthController {
      @Autowired
      UserRepository repository;
-     @Autowired PasswordEncoder passwordEncoder;
-     @Autowired TokenService tokenService;
+     @Autowired
+     PasswordEncoder passwordEncoder;
+     @Autowired
+     TokenService tokenService;
 
     @GetMapping("user")
     public ResponseEntity<List<User>> findAll(){

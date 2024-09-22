@@ -1,12 +1,13 @@
 package com.example.exame_app.controllers;
 
-import eco.com.exame.domain.Paciente;
-import eco.com.exame.service.PacienteService;
+
+import com.example.exame_app.domain.Paciente;
+import com.example.exame_app.services.PacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
+
 
 import java.util.List;
 import java.util.Optional;

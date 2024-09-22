@@ -1,6 +1,7 @@
 package com.example.exame_app.repositories;
 
-import eco.com.exame.domain.Exame;
+
+import com.example.exame_app.domain.Exame;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

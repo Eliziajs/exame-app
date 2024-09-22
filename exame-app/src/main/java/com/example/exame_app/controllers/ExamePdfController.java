@@ -1,14 +1,14 @@
 package com.example.exame_app.controllers;
 
+import com.example.exame_app.domain.Exame;
+import com.example.exame_app.domain.Paciente;
+import com.example.exame_app.services.PacienteService;
 import com.itextpdf.text.*;
 import com.itextpdf.text.Font;
 import com.itextpdf.text.pdf.PdfDocument;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
-import eco.com.exame.domain.Exame;
-import eco.com.exame.domain.Paciente;
-import eco.com.exame.service.PacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
