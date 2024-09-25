@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.hateoas.RepresentationModel;
 
 
 import java.io.Serializable;
@@ -16,7 +17,7 @@ import java.util.Date;
 @Entity
 @EqualsAndHashCode
 @Table(name="exames")
-public class Exame implements Serializable {
+public class Exame extends RepresentationModel<Exame> implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
