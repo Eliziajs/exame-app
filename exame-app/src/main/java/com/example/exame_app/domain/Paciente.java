@@ -59,7 +59,6 @@ public class Paciente implements Serializable {
     private String cava;
     private String comentario;**/
 
-
     @JsonManagedReference
     @ManyToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
     @JoinTable(name = "user_paciente",
