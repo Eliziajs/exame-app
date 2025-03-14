@@ -32,4 +32,6 @@ public class ExameService {
     public void delete(Long id){
         repository.deleteById(id);
     }
+
+
 }

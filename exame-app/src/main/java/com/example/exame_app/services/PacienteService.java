@@ -31,4 +31,20 @@ public class PacienteService {
        pacienteRepository.deleteById(id);
     }
 
+    public Optional<Paciente> findPacienteByCPF(String email){
+        return pacienteRepository.findPacienteByCPF(email);
+
+    }
+    public Optional<Object> RegistraPaciente(Paciente p){
+        if(pacienteRepository.findById(p.getId()).isPresent()){
+            return Optional.of("Paciente Already Exist");
+        }
+        return Optional.of(pacienteRepository.save(p));
+    }
+    public Optional<Object> BuscaCPF(String cpf){
+        if(pacienteRepository.findPacienteByCPF(cpf).isPresent()){
+            return Optional.of("Paciente Already Exist");
+        }
+        return Optional.of(pacienteRepository.findPacienteByCPF(cpf).get());
+    }
 }

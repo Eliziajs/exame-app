@@ -43,7 +43,7 @@ public class AuthController {
 
 
     @GetMapping(produces = {MediaType.APPLICATION_JSON,
-            MediaType.APPLICATION_XML, MediaType.APPLICATION_YML})
+            MediaType.APPLICATION_YML})
     @Operation(summary = "Finds all user", description = "Finds all Users",
             tags = {"Users"},
             responses = {@ApiResponse(description = "Success", responseCode = "200",
@@ -66,7 +66,7 @@ public class AuthController {
 
 
     @GetMapping(value = ID, produces = {MediaType.APPLICATION_JSON,
-            MediaType.APPLICATION_XML,MediaType.APPLICATION_YML})
+          MediaType.APPLICATION_YML})
     @Operation(summary = "Finds a User", description = "Finds a User",
             tags = {"User"},
             responses = {@ApiResponse(description = "Success", responseCode = "200",
@@ -86,9 +86,9 @@ public class AuthController {
 
 
 
-    @PostMapping (value= "login", consumes = {MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML,
+    @PostMapping (value= "login", consumes = {MediaType.APPLICATION_JSON,
             MediaType.APPLICATION_YML},
-            produces = {MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML,
+            produces = {MediaType.APPLICATION_JSON,
                     MediaType.APPLICATION_YML})
     @Operation(summary = "Add a User", description = "Add a User",
             tags = {"User"},
@@ -115,9 +115,9 @@ public class AuthController {
 
 
 
-    @PostMapping (value= "register", consumes = {MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML,
+    @PostMapping (value= "register", consumes = {MediaType.APPLICATION_JSON,
             MediaType.APPLICATION_YML},
-            produces = {MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML,
+            produces = {MediaType.APPLICATION_JSON,
                     MediaType.APPLICATION_YML})
     @Operation(summary = "Add a User", description = "Add a User",
             tags = {"User"},
@@ -156,9 +156,9 @@ public class AuthController {
 
 
 
-    @PutMapping(value = ID,consumes = {MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML,
+    @PutMapping(value = ID,consumes = {MediaType.APPLICATION_JSON,
             MediaType.APPLICATION_YML},
-            produces = {MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML,
+            produces = {MediaType.APPLICATION_JSON,
                     MediaType.APPLICATION_YML})
     @Operation(summary = "Updates a User", description = "Updates a User",
             tags = {"User"},

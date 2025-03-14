@@ -2,11 +2,12 @@ package com.example.exame_app.domain;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.hateoas.RepresentationModel;
 
-
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -18,6 +19,7 @@ import java.util.Date;
 @EqualsAndHashCode
 @Table(name="exames")
 public class Exame extends RepresentationModel<Exame> implements Serializable {
+    @Serial
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -50,11 +52,9 @@ public class Exame extends RepresentationModel<Exame> implements Serializable {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm")
     private Date data = new Date();
 
-
-    @ManyToOne (cascade=CascadeType.ALL)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_paciente")
-
-    @JsonBackReference
     private Paciente paciente;
 
 
