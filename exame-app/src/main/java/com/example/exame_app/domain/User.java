@@ -2,12 +2,18 @@ package com.example.exame_app.domain;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -16,6 +22,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class User implements Serializable {
+    @Serial
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -36,9 +43,8 @@ public class User implements Serializable {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm")
     private Date data = new Date();
 
-
-    @ManyToMany (mappedBy = "users", cascade=CascadeType.PERSIST)
-    @JsonBackReference
-    private List<Paciente> pacientes;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @ManyToMany (mappedBy = "users")
+    private Set<Paciente> pacientes;
 
 }

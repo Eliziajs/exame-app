@@ -9,9 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.beans.Transient;
+import java.util.stream.Collectors;
 
 @Service
-public class RegistroExame {
+public class RegistroExameService {
 
     @Autowired
     UserRepository userRepository;
@@ -20,7 +21,7 @@ public class RegistroExame {
     @Autowired
     ExameRepository exameRepository;
 
-    public RegistroExame(PacienteRepository pacienteRepository, ExameRepository exameRepository, UserRepository userRepository) {
+    public RegistroExameService(PacienteRepository pacienteRepository, ExameRepository exameRepository, UserRepository userRepository) {
         this.pacienteRepository = pacienteRepository;
         this.exameRepository = exameRepository;
         this.userRepository = userRepository;
@@ -29,7 +30,7 @@ public class RegistroExame {
     @Transient
     public Exame novoExame(RegistroExameDTO registroExameDTO) {
         Exame e =new Exame();
-        e.setPaciente(pacienteRepository.findAllById(registroExameDTO.pacienteId()).stream().findFirst().get());
+        e.setPaciente(pacienteRepository.findById(registroExameDTO.pacienteId()).get());
         return exameRepository.save(e);
     }
 }
